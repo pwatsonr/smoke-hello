@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for REQ-000042. Pinned the `greet(name: str = 'world') -> str` API contract, the `__main__`-guard contract, and the canonical `test_hello.py` shape (3 pytest functions with verbatim subprocess assertions). Defined 9 concrete test cases (TC-1..TC-9) mapped to PRD AT-1..AT-7 and Plan TASK-001 AC #1..#9, including static greps (signature, no-imports), import-time silence, pytest selection (`-k greet` ≥ 2), and working-tree containment. Data-schema/error-taxonomy/integration sections marked N/A per Scale-Rigor guidance. Spec-time inspection confirms `hello.py` and `test_hello.py` already match the canonical shape verbatim, so the expected source diff is empty (TDD ADR-3, PRD OQ-4).",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000042-req-000042.md",
+      "title": "Spec: Refactor hello.py to expose greet(name='world') with pytest coverage"
+    }
+  ]
+}
