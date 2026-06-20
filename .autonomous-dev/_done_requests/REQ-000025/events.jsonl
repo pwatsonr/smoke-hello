@@ -1,0 +1,39 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-20T02:20:42Z",
+  "request_id": "REQ-000025",
+  "from": "intake",
+  "to": "prd"
+}
+{
+  "timestamp": "2026-06-20T03:40:22Z",
+  "type": "session_interrupted",
+  "request_id": "REQ-000025",
+  "details": {
+    "recovery_action": "restored_from_checkpoint"
+  }
+}
+{
+  "timestamp": "2026-06-20T03:44:22Z",
+  "type": "session_interrupted",
+  "request_id": "REQ-000025",
+  "details": {
+    "recovery_action": "restored_from_checkpoint"
+  }
+}
+{
+  "timestamp": "2026-06-20T03:48:50Z",
+  "type": "session_interrupted",
+  "request_id": "REQ-000025",
+  "details": {
+    "recovery_action": "restored_from_checkpoint"
+  }
+}
+{
+  "timestamp": "2026-06-20T03:56:15Z",
+  "type": "session_interrupted",
+  "request_id": "REQ-000025",
+  "details": {
+    "recovery_action": "restored_from_checkpoint"
+  }
+}

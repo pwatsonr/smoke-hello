@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for REQ-000023 (append one tagline line to README.md). Rigor scaled to a trivial docs-only change: API/Schema/Error-Handling sections are explicitly N/A; acceptance criteria are behavioral and shell-verifiable (grep -cF, awk last-non-empty-line, tail -c | xxd, git status --porcelain), not hand-counted byte deltas. Canonical tagline, exact Edit invocation, idempotency guard, and rollback procedure are specified.",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000023-req-000023.md",
+      "title": "Spec: Append Tagline to README.md (REQ-000023)"
+    }
+  ]
+}

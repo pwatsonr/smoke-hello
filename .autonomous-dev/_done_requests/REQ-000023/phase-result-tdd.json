@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "tdd",
+  "feedback": "TDD authored for REQ-000023. Design specifies an append-only edit to README.md with a blockquote tagline, EOF newline normalization, idempotency guard, and full traceability to PRD FR/NFR/AT. Four ADRs document decisions; OQ-1 flags the +1 vs +2 line-delta interpretation for reviewer attention.",
+  "artifacts": [
+    {
+      "kind": "tdd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/tdd/REQ-000023-req-000023.md",
+      "title": "TDD: Append Tagline to README.md (REQ-000023)"
+    }
+  ]
+}

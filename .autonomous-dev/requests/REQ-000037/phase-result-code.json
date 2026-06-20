@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "All acceptance criteria met. hello.py refactored to expose greet(name='world')->str with __main__ guard. test_hello.py updated with two new unit tests. All 3 pytest tests pass (3 passed in 0.13s). No new files created. CLI still prints 'hello world'. import hello is side-effect-free. PR #14 created targeting autonomous/REQ-000015.",
+  "evidence": [
+    {
+      "command": "python3 hello.py && python3 -c \"import hello\" 2>&1 && python3 -c \"from hello import greet; print(greet())\" && python3 -c \"from hello import greet; print(greet('ada'))\" && python3 -c \"from hello import greet; print(greet(name='ada'))\"",
+      "exit_code": 0,
+      "output_tail": "hello world\nhello world\nhello ada\nhello ada"
+    },
+    {
+      "command": "python3 -m pytest test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "test_hello.py::test_hello_prints_hello_world PASSED                      [ 33%]\ntest_hello.py::test_greet_default_returns_hello_world PASSED             [ 66%]\ntest_hello.py::test_greet_with_custom_name_returns_hello_name PASSED     [100%]\n\n============================== 3 passed in 0.13s ==============================="
+    },
+    {
+      "command": "git status --porcelain",
+      "exit_code": 0,
+      "output_tail": "M  hello.py\nM  test_hello.py\n?? .autonomous-dev/\n?? docs/"
+    },
+    {
+      "command": "git push -u origin 'autonomous/REQ-000037'",
+      "exit_code": 0,
+      "output_tail": "To https://github.com/pwatsonr/smoke-hello.git\n * [new branch]      autonomous/REQ-000037 -> autonomous/REQ-000037\nbranch 'autonomous/REQ-000037' set up to track 'origin/autonomous/REQ-000037'."
+    },
+    {
+      "command": "gh pr create --base autonomous/REQ-000015 --head 'autonomous/REQ-000037' --title \"feat: refactor hello.py to expose greet(name='world') function\" --body ...",
+      "exit_code": 0,
+      "output_tail": "https://github.com/pwatsonr/smoke-hello/pull/14"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "source",
+      "path": "/Users/pwatson/codebase/smoke-hello/hello.py",
+      "title": "Refactored hello.py with greet() function and __main__ guard"
+    },
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/test_hello.py",
+      "title": "Updated test_hello.py with two new unit tests for greet()"
+    },
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/14",
+      "title": "PR #14: feat: refactor hello.py to expose greet(name='world') function"
+    }
+  ]
+}

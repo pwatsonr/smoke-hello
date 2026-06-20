@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "No-op (idempotent): README.md already ends with 'Maintained by the autonomous-dev reliability harness.' All 6 acceptance criteria (TC-1 through TC-6) verified via shell commands. Branch autonomous/REQ-000036 pushed; PR #13 created against autonomous/REQ-000015.",
+  "evidence": [
+    {
+      "command": "grep -cFx 'Maintained by the autonomous-dev reliability harness.' README.md",
+      "exit_code": 0,
+      "output_tail": "1"
+    },
+    {
+      "command": "awk 'NF{last=$0} END{print last}' README.md",
+      "exit_code": 0,
+      "output_tail": "Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "tail -c 1 README.md | od -An -c | tr -d ' '",
+      "exit_code": 0,
+      "output_tail": "\\n"
+    },
+    {
+      "command": "git status --porcelain",
+      "exit_code": 0,
+      "output_tail": "?? .autonomous-dev/\n?? docs/"
+    },
+    {
+      "command": "git push -u origin autonomous/REQ-000036",
+      "exit_code": 0,
+      "output_tail": "* [new branch]      autonomous/REQ-000036 -> autonomous/REQ-000036\nbranch 'autonomous/REQ-000036' set up to track 'origin/autonomous/REQ-000036'."
+    },
+    {
+      "command": "gh pr create --base autonomous/REQ-000015 --head autonomous/REQ-000036 ...",
+      "exit_code": 0,
+      "output_tail": "https://github.com/pwatsonr/smoke-hello/pull/13"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/13",
+      "title": "PR #13: docs: append reliability harness maintenance line to README.md (REQ-000036)"
+    }
+  ]
+}

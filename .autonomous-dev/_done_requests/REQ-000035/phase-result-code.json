@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "README.md already contained the required line on the base branch autonomous/REQ-000015? No — base branch lacked it; appended the single line 'Maintained by the autonomous-dev reliability harness.' to README.md. All 6 acceptance criteria verified (AC-1 grep present, AC-2 count=1, AC-3 last non-empty line correct, AC-4 valid UTF-8, AC-5 only README.md changed, AC-6 idempotent). PR #12 created.",
+  "evidence": [
+    {
+      "command": "grep -qF 'Maintained by the autonomous-dev reliability harness.' README.md && echo 'PASS: exit 0'",
+      "exit_code": 0,
+      "output_tail": "PASS: exit 0"
+    },
+    {
+      "command": "grep -cF 'Maintained by the autonomous-dev reliability harness.' README.md",
+      "exit_code": 0,
+      "output_tail": "1"
+    },
+    {
+      "command": "awk 'NF{last=$0} END{print last}' README.md",
+      "exit_code": 0,
+      "output_tail": "Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "iconv -f UTF-8 -t UTF-8 README.md > /dev/null && echo 'PASS: valid UTF-8'",
+      "exit_code": 0,
+      "output_tail": "PASS: valid UTF-8"
+    },
+    {
+      "command": "git diff --name-only autonomous/REQ-000015..HEAD",
+      "exit_code": 0,
+      "output_tail": "README.md"
+    },
+    {
+      "command": "git status --porcelain README.md",
+      "exit_code": 0,
+      "output_tail": ""
+    },
+    {
+      "command": "git commit -m 'docs: append reliability harness maintenance line to README.md ...'",
+      "exit_code": 0,
+      "output_tail": "[autonomous/REQ-000035 abd1430] docs: append reliability harness maintenance line to README.md\n 1 file changed, 1 insertion(+)"
+    },
+    {
+      "command": "git push -u origin 'autonomous/REQ-000035'",
+      "exit_code": 0,
+      "output_tail": "branch 'autonomous/REQ-000035' set up to track 'origin/autonomous/REQ-000035'."
+    },
+    {
+      "command": "gh pr create --base autonomous/REQ-000015 --head 'autonomous/REQ-000035' ...",
+      "exit_code": 0,
+      "output_tail": "https://github.com/pwatsonr/smoke-hello/pull/12"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "modified-file",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "README.md with maintenance line appended"
+    },
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/12",
+      "title": "PR #12: docs: append reliability harness maintenance line to README.md"
+    }
+  ]
+}

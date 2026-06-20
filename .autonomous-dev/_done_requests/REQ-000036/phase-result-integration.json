@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "All integration checks passed. README.md contains exactly 1 instance of 'Maintained by the autonomous-dev reliability harness.' as its final line. Existing test suite (test_hello_prints_hello_world) passes with no regressions. Branch autonomous/REQ-000036 is clean with the correct commit.",
+  "evidence": [
+    {
+      "command": "python3 -m pytest test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3\ncachedir: .pytest_cache\nrootdir: /Users/pwatson/codebase/smoke-hello\ncollecting ... collected 1 item\n\ntest_hello.py::test_hello_prints_hello_world PASSED                      [100%]\n\n============================== 1 passed in 0.14s ==============================="
+    },
+    {
+      "command": "grep -cFx 'Maintained by the autonomous-dev reliability harness.' README.md && tail -1 README.md && wc -l README.md",
+      "exit_code": 0,
+      "output_tail": "1\nMaintained by the autonomous-dev reliability harness.\n       4 README.md"
+    },
+    {
+      "command": "git log --oneline -5 && git branch --show-current",
+      "exit_code": 0,
+      "output_tail": "abd1430 docs: append reliability harness maintenance line to README.md\nd317e04 feat: add hello.py and test_hello.py for smoke test (REQ-000015)\n8e1b4d6 init smoke-hello scratch repo\nautonomous/REQ-000036"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "test-output",
+      "path": "test_hello.py",
+      "title": "Existing pytest suite: 1 passed, 0 failed — no regression"
+    },
+    {
+      "kind": "test-output",
+      "path": "README.md",
+      "title": "README.md verified: exactly 1 instance of required line as last line, 4 lines total"
+    }
+  ]
+}

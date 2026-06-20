@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "prd",
+  "feedback": "PRD authored for trivial README tagline append. Scope strictly limited to appending one line to /Users/pwatson/codebase/smoke-hello/README.md; explicit FRs, ATs, and non-goals forbid any other edits. Two minor open questions (blank-line separator, exact wording) are documented with recommendations.",
+  "artifacts": [
+    {
+      "kind": "prd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/prd/REQ-000023-req-000023.md",
+      "title": "PRD: Append Tagline to README.md (REQ-000023)"
+    }
+  ]
+}

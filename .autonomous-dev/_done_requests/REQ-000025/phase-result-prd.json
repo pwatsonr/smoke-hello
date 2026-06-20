@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "prd",
+  "feedback": "PRD already authored at docs/prd/REQ-000025-req-000025.md and re-verified by the PRD author agent this session. Document is complete and self-sufficient: problem statement, goals/non-goals, 4 prioritized user stories (US-1..US-4), 9 functional requirements (FR-1..FR-9), 9 acceptance tests (AT-1..AT-9), NFRs (atomicity, determinism, performance, encoding, scope, reviewability, Markdown well-formedness), technical constraints (including TC-3 on .pytest_cache/README.md), success metrics, 7 risks with mitigations, open questions, and a US->FR->AT traceability matrix. Specifies an exact-byte append of the 53-byte string 'Maintained by the autonomous-dev reliability harness.' followed by a single LF to repo-root README.md, with create-if-missing, idempotence, single-file-scope, and LF/no-BOM guarantees.",
+  "artifacts": [
+    {
+      "kind": "prd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/prd/REQ-000025-req-000025.md",
+      "title": "PRD: Append Maintenance Notice Line to README.md (REQ-000025)"
+    }
+  ]
+}

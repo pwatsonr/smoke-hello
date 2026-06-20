@@ -1,0 +1,2 @@
+{"ts":"2026-06-20T18:46:33Z","phase":"integration","command":"python3 -m pytest test_hello.py -v","classification":"idempotent","role":"substantive","checks":{"presence":"pass","exit_code":"pass","output_tail":"pass","re_execution":"pass"},"verdict":"verified","reason":""}
+{"ts":"2026-06-20T18:46:33Z","phase":"integration","command":"python3 hello.py","classification":"unclassifiable","role":"substantive","checks":{"presence":"pass","exit_code":"skipped","output_tail":"skipped","re_execution":"skipped"},"verdict":"verified","reason":"unclassifiable_presence_only"}

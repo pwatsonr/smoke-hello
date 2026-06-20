@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "All integration checks pass. README.md contains exactly one occurrence of 'Maintained by the autonomous-dev reliability harness.' as its last non-empty line. Only README.md differs from the base branch. Existing test suite (1 test) passes with 0 failures. Commit abd1430 pushed; PR #12 open.",
+  "evidence": [
+    {
+      "command": "grep -cF 'Maintained by the autonomous-dev reliability harness.' README.md && echo \"COUNT_EXIT: $?\"",
+      "exit_code": 0,
+      "output_tail": "1\nCOUNT_EXIT: 0"
+    },
+    {
+      "command": "awk 'NF{last=$0} END{print last}' README.md",
+      "exit_code": 0,
+      "output_tail": "Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "git diff --name-only autonomous/REQ-000015..HEAD",
+      "exit_code": 0,
+      "output_tail": "README.md"
+    },
+    {
+      "command": "python3 -m pytest /Users/pwatson/codebase/smoke-hello/test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3\ncachedir: .pytest_cache\nrootdir: /Users/pwatson/codebase/smoke-hello\ncollecting ... collected 1 item\n\ntest_hello.py::test_hello_prints_hello_world PASSED                      [100%]\n\n============================== 1 passed in 0.15s =============================="
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/test_hello.py",
+      "title": "Existing smoke test — 1 passed, 0 failed"
+    },
+    {
+      "kind": "modified-file",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "README.md with required maintenance line appended"
+    }
+  ]
+}

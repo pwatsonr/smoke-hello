@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "phase": "spec_review",
+  "feedback": "Spec is proportionate to a trivial-docs append. Acceptance criteria are behavioral (grep/awk/iconv), no brittle byte-count assertions, idempotency and creation-case covered, API/Data/Error sections correctly marked N/A. Verified README.md already ends with the required line, matching the spec's current-state note. Approve.",
+  "findings": [],
+  "artifacts": [
+    {
+      "kind": "review",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000035-req-000035.md",
+      "title": "Spec review: REQ-000035 — Append maintenance line to README.md"
+    }
+  ]
+}

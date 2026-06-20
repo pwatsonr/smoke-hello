@@ -1,0 +1,72 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-20T16:03:31Z",
+  "request_id": "REQ-000034",
+  "from": "intake",
+  "to": "spec"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:07:08Z",
+  "request_id": "REQ-000034",
+  "from": "spec",
+  "to": "spec_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:09:48Z",
+  "request_id": "REQ-000034",
+  "from": "spec_review",
+  "to": "code"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:14:37Z",
+  "request_id": "REQ-000034",
+  "from": "code",
+  "to": "code_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:16:55Z",
+  "request_id": "REQ-000034",
+  "from": "code_review",
+  "to": "integration"
+}
+{
+  "event": "phase_failed",
+  "timestamp": "2026-06-20T16:20:13Z",
+  "request_id": "REQ-000034",
+  "phase": "integration",
+  "escalation_count": 1
+}
+{
+  "event": "merge_decision",
+  "timestamp": "2026-06-20T16:23:40Z",
+  "request_id": "REQ-000034",
+  "decision": "skip_not_mergeable",
+  "reason": "mergeable=CONFLICTING mergeStateStatus=DIRTY (need MERGEABLE+CLEAN)",
+  "effective_trust": 3,
+  "merged": false,
+  "pr_url": "https://github.com/pwatsonr/smoke-hello/pull/11"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:23:40Z",
+  "request_id": "REQ-000034",
+  "from": "integration",
+  "to": "deploy"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T16:23:42Z",
+  "request_id": "REQ-000034",
+  "from": "deploy",
+  "to": "monitor"
+}
+{
+  "event": "completed",
+  "timestamp": "2026-06-20T16:26:30Z",
+  "request_id": "REQ-000034",
+  "phase": "monitor"
+}

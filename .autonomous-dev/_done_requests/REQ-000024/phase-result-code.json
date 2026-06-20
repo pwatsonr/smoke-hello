@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "All 11 acceptance criteria pass. hello.py refactored to expose greet(name='world')->str with __main__ guard; test_hello.py extended with two new unit tests while preserving existing subprocess test byte-identically. pytest reports 3 passed / 0 failed; -k greet shows 2 passed / 1 deselected; only hello.py and test_hello.py modified in git.",
+  "evidence": [
+    {
+      "command": "python3 -m py_compile hello.py test_hello.py && echo 'Compilation: PASS'",
+      "exit_code": 0,
+      "output_tail": "Compilation: PASS"
+    },
+    {
+      "command": "grep -c '^import\\|^from' hello.py",
+      "exit_code": 0,
+      "output_tail": "0"
+    },
+    {
+      "command": "python3 -c \"from hello import greet; assert greet() == 'hello world'\" && echo 'AC-2 PASS' && python3 -c \"from hello import greet; assert greet('ada') == 'hello ada'\" && echo 'AC-3 PASS'",
+      "exit_code": 0,
+      "output_tail": "AC-2 PASS\nAC-3 PASS"
+    },
+    {
+      "command": "python3 -m pytest test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "test_hello.py::test_hello_prints_hello_world PASSED                      [ 33%]\ntest_hello.py::test_greet_default_returns_hello_world PASSED             [ 66%]\ntest_hello.py::test_greet_custom_name_returns_hello_ada PASSED           [100%]\n\n============================== 3 passed in 0.17s ==============================="
+    },
+    {
+      "command": "python3 -m pytest test_hello.py -k greet -v",
+      "exit_code": 0,
+      "output_tail": "test_hello.py::test_greet_default_returns_hello_world PASSED             [ 50%]\ntest_hello.py::test_greet_custom_name_returns_hello_ada PASSED           [100%]\n\n======================= 2 passed, 1 deselected in 0.02s ========================"
+    },
+    {
+      "command": "git status --porcelain",
+      "exit_code": 0,
+      "output_tail": "M  hello.py\nM  test_hello.py\n?? .autonomous-dev/\n?? docs/"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "source",
+      "path": "/Users/pwatson/codebase/smoke-hello/hello.py",
+      "title": "Refactored hello.py exposing greet(name='world') -> str"
+    },
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/test_hello.py",
+      "title": "Extended test_hello.py with 2 new unit tests for greet()"
+    },
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/7",
+      "title": "feat: refactor hello.py to expose greet() + add pytest unit tests (REQ-000024)"
+    }
+  ]
+}

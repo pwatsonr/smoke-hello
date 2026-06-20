@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for REQ-000024: refactor hello.py to expose greet(name='world') -> str under a __main__ guard, and extend test_hello.py with two new unit tests while preserving the existing subprocess test byte-for-byte. Spec contains full API contract for hello.greet, verbatim required final source for both files, 11 mechanically verifiable acceptance criteria, and a 11-row test case table. Rigor scaled to a small, two-file refactor with one new public function; no fabricated byte counts.",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000024-req-000024.md",
+      "title": "Spec: Refactor hello.py to expose greet(name='world') + add unit tests"
+    }
+  ]
+}

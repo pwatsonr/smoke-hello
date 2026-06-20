@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "README.md correctly contains 'Maintained by the autonomous-dev reliability harness.' as the final line (line 4). Only README.md was modified. Existing pytest suite passes (1 passed, 0 failed). PR #9 on autonomous/REQ-000032 is clean.",
+  "evidence": [
+    {
+      "command": "grep -c \"Maintained by the autonomous-dev reliability harness.\" README.md && tail -3 README.md && wc -l README.md",
+      "exit_code": 0,
+      "output_tail": "1\n\nScratch repo for autonomous-dev daemon smoke test.\nMaintained by the autonomous-dev reliability harness.\n       4 README.md"
+    },
+    {
+      "command": "git diff d317e04 HEAD -- README.md && git diff d317e04 HEAD --name-only",
+      "exit_code": 0,
+      "output_tail": "diff --git a/README.md b/README.md\nindex 3b06434..afd9488 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,4 @@\n # smoke-hello\n \n Scratch repo for autonomous-dev daemon smoke test.\n+Maintained by the autonomous-dev reliability harness.\nREADME.md"
+    },
+    {
+      "command": "python3 -m pytest /Users/pwatson/codebase/smoke-hello/test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3\ncachedir: .pytest_cache\nrootdir: /Users/pwatson/codebase/smoke-hello\ncollecting ... collected 1 item\n\ntest_hello.py::test_hello_prints_hello_world PASSED                      [100%]\n\n============================== 1 passed in 0.38s ==============================="
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/test_hello.py",
+      "title": "Existing smoke test — 1 passed, 0 failed, no regressions"
+    },
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/9",
+      "title": "docs: append reliability harness maintenance line to README.md"
+    }
+  ]
+}

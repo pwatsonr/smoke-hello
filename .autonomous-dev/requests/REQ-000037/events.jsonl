@@ -1,0 +1,107 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-20T18:07:17Z",
+  "request_id": "REQ-000037",
+  "from": "intake",
+  "to": "prd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:11:30Z",
+  "request_id": "REQ-000037",
+  "from": "prd",
+  "to": "prd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:14:24Z",
+  "request_id": "REQ-000037",
+  "from": "prd_review",
+  "to": "tdd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:18:57Z",
+  "request_id": "REQ-000037",
+  "from": "tdd",
+  "to": "tdd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:21:38Z",
+  "request_id": "REQ-000037",
+  "from": "tdd_review",
+  "to": "plan"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:25:54Z",
+  "request_id": "REQ-000037",
+  "from": "plan",
+  "to": "plan_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:28:49Z",
+  "request_id": "REQ-000037",
+  "from": "plan_review",
+  "to": "spec"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:34:07Z",
+  "request_id": "REQ-000037",
+  "from": "spec",
+  "to": "spec_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:36:45Z",
+  "request_id": "REQ-000037",
+  "from": "spec_review",
+  "to": "code"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:41:23Z",
+  "request_id": "REQ-000037",
+  "from": "code",
+  "to": "code_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:43:41Z",
+  "request_id": "REQ-000037",
+  "from": "code_review",
+  "to": "integration"
+}
+{
+  "event": "merge_decision",
+  "timestamp": "2026-06-20T18:46:33Z",
+  "request_id": "REQ-000037",
+  "decision": "skip_not_mergeable",
+  "reason": "mergeable=CONFLICTING mergeStateStatus=DIRTY (need MERGEABLE+CLEAN)",
+  "effective_trust": 3,
+  "merged": false,
+  "pr_url": "https://github.com/pwatsonr/smoke-hello/pull/14"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:46:33Z",
+  "request_id": "REQ-000037",
+  "from": "integration",
+  "to": "deploy"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T18:46:36Z",
+  "request_id": "REQ-000037",
+  "from": "deploy",
+  "to": "monitor"
+}
+{
+  "event": "completed",
+  "timestamp": "2026-06-20T18:49:33Z",
+  "request_id": "REQ-000037",
+  "phase": "monitor"
+}

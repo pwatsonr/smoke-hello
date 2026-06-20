@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "phase": "code_review",
+  "feedback": "README.md correctly has the exact line 'Maintained by the autonomous-dev reliability harness.' appended as the last content line. No other files modified. Matches spec exactly.",
+  "findings": [],
+  "artifacts": [
+    { "kind": "review", "path": "README.md", "title": "README.md append review" }
+  ]
+}

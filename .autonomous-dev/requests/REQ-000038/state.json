@@ -1,0 +1,179 @@
+{
+  "id": "REQ-000038",
+  "status": "done",
+  "current_phase": "monitor",
+  "priority": 1,
+  "created_at": "2026-06-20T18:48:04.524Z",
+  "updated_at": "2026-06-20T19:31:16Z",
+  "title": "Refactor hello.py to define a function greet(name='world') that returns the string 'hello <name>' (e",
+  "description": "Refactor hello.py to define a function greet(name='world') that returns the string 'hello <name>' (e.g. greet() -> 'hello world', greet('ada') -> 'hello ada'), and make the __main__ block print greet(). Preserve existing behavior: running 'python hello.py' must still print exactly 'hello world'. Add pytest unit tests in test_hello.py for greet() covering both the default and a custom name, keeping the existing script-output test passing.",
+  "target_repo": "/Users/pwatson/codebase/smoke-hello",
+  "source": "cli",
+  "type": "feature",
+  "task_size": "standard",
+  "blocked_by": [],
+  "phase_history": [
+    {
+      "state": "prd",
+      "entered_at": null,
+      "exited_at": "2026-06-20T18:53:34Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "prd_review",
+      "entered_at": "2026-06-20T18:53:34Z",
+      "exited_at": "2026-06-20T18:56:43Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "tdd",
+      "entered_at": "2026-06-20T18:56:43Z",
+      "exited_at": "2026-06-20T19:01:34Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "tdd_review",
+      "entered_at": "2026-06-20T19:01:34Z",
+      "exited_at": "2026-06-20T19:04:21Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "plan",
+      "entered_at": "2026-06-20T19:04:21Z",
+      "exited_at": "2026-06-20T19:08:11Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "plan_review",
+      "entered_at": "2026-06-20T19:08:11Z",
+      "exited_at": "2026-06-20T19:11:00Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "spec",
+      "entered_at": "2026-06-20T19:11:00Z",
+      "exited_at": "2026-06-20T19:15:38Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "spec_review",
+      "entered_at": "2026-06-20T19:15:38Z",
+      "exited_at": "2026-06-20T19:18:53Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "code",
+      "entered_at": "2026-06-20T19:18:53Z",
+      "exited_at": "2026-06-20T19:22:54Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "code_review",
+      "entered_at": "2026-06-20T19:22:54Z",
+      "exited_at": "2026-06-20T19:25:20Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "integration",
+      "entered_at": "2026-06-20T19:25:20Z",
+      "exited_at": "2026-06-20T19:28:05Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "deploy",
+      "entered_at": "2026-06-20T19:28:05Z",
+      "exited_at": "2026-06-20T19:28:08Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    },
+    {
+      "state": "monitor",
+      "entered_at": "2026-06-20T19:28:08Z",
+      "exited_at": "2026-06-20T19:31:16Z",
+      "session_id": null,
+      "turns_used": 0,
+      "cost_usd": 0,
+      "retry_count": 0,
+      "exit_reason": "completed"
+    }
+  ],
+  "phase_overrides": [
+    "intake",
+    "prd",
+    "prd_review",
+    "tdd",
+    "tdd_review",
+    "plan",
+    "plan_review",
+    "spec",
+    "spec_review",
+    "code",
+    "code_review",
+    "integration",
+    "deploy",
+    "monitor"
+  ],
+  "current_phase_metadata": {
+    "session_active": false,
+    "dispatched_at": "2026-06-20T19:28:09Z",
+    "dispatched_phase": null,
+    "gate_entered_at": "2026-06-20T19:22:54Z"
+  },
+  "cost_accrued_usd": 4.0771944,
+  "turn_count": 0,
+  "escalation_count": 0,
+  "schema_version": 1,
+  "error": null,
+  "status_reason": "PR ready for human merge (not mergeable: mergeable=CONFLICTING, mergeStateStatus=DIRTY)",
+  "merge_status": "pr_ready_for_human",
+  "pr_ready_for_human": true,
+  "pr_url": "https://github.com/pwatsonr/smoke-hello/pull/15",
+  "effective_trust": 3
+}

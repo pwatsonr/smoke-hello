@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for trivial-docs change: append (idempotently) the line 'Maintained by the autonomous-dev reliability harness.' to README.md. Spec is proportional to task size — behavioral acceptance criteria anchored to literal text and shell-verifiable predicates, no fabricated APIs/schemas/error taxonomy, no brittle byte-count assertions. Notes that, in the current real state, README.md already ends with the target line, so the correct action is a no-op; executor must check before writing to avoid duplication.",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000034-req-000034.md",
+      "title": "Spec: REQ-000034 — Append maintenance attribution line to README.md"
+    }
+  ]
+}

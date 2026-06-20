@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "phase": "code_review",
+  "feedback": "APPROVE. README.md change is the exact one-line tagline blockquote appended to the end as specified. Single-line addition, ASCII only, trailing newline preserved, no other files modified. Matches spec acceptance criteria (canonical text, last-non-empty-line, idempotent). No blocking, major, or minor issues found.",
+  "findings": [],
+  "artifacts": [
+    {
+      "kind": "review",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "Code review: README tagline append (REQ-000023)"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-19T02:56:35Z",
+  "request_id": "REQ-000023",
+  "from": "intake",
+  "to": "prd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:00:10Z",
+  "request_id": "REQ-000023",
+  "from": "prd",
+  "to": "prd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:02:40Z",
+  "request_id": "REQ-000023",
+  "from": "prd_review",
+  "to": "tdd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:06:48Z",
+  "request_id": "REQ-000023",
+  "from": "tdd",
+  "to": "tdd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:09:54Z",
+  "request_id": "REQ-000023",
+  "from": "tdd_review",
+  "to": "plan"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:13:46Z",
+  "request_id": "REQ-000023",
+  "from": "plan",
+  "to": "plan_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:16:37Z",
+  "request_id": "REQ-000023",
+  "from": "plan_review",
+  "to": "spec"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:20:41Z",
+  "request_id": "REQ-000023",
+  "from": "spec",
+  "to": "spec_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:23:36Z",
+  "request_id": "REQ-000023",
+  "from": "spec_review",
+  "to": "code"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:27:44Z",
+  "request_id": "REQ-000023",
+  "from": "code",
+  "to": "code_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:30:15Z",
+  "request_id": "REQ-000023",
+  "from": "code_review",
+  "to": "integration"
+}
+{
+  "event": "phase_failed",
+  "timestamp": "2026-06-19T03:33:54Z",
+  "request_id": "REQ-000023",
+  "phase": "integration",
+  "escalation_count": 1
+}
+{
+  "event": "merge_decision",
+  "timestamp": "2026-06-19T03:37:44Z",
+  "request_id": "REQ-000023",
+  "decision": "merged",
+  "reason": "auto-merged at trust L3 (--squash, no --admin); PR was OPEN+MERGEABLE+CLEAN",
+  "effective_trust": 3,
+  "merged": true,
+  "pr_url": "https://github.com/pwatsonr/smoke-hello/pull/6"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:37:44Z",
+  "request_id": "REQ-000023",
+  "from": "integration",
+  "to": "deploy"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-19T03:37:50Z",
+  "request_id": "REQ-000023",
+  "from": "deploy",
+  "to": "monitor"
+}
+{
+  "event": "completed",
+  "timestamp": "2026-06-19T03:40:48Z",
+  "request_id": "REQ-000023",
+  "phase": "monitor"
+}

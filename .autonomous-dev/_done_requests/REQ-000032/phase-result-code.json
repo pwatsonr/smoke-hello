@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "Appended 'Maintained by the autonomous-dev reliability harness.' as a single line to README.md. Branch autonomous/REQ-000032 created from autonomous/REQ-000015, committed, pushed, and PR opened at https://github.com/pwatsonr/smoke-hello/pull/9. No other files modified.",
+  "evidence": [
+    {
+      "command": "grep -n \"Maintained by the autonomous-dev reliability harness.\" /Users/pwatson/codebase/smoke-hello/README.md",
+      "exit_code": 0,
+      "output_tail": "4:Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "git diff README.md",
+      "exit_code": 0,
+      "output_tail": "diff --git a/README.md b/README.md\nindex 3b06434..afd9488 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,4 @@\n # smoke-hello\n \n Scratch repo for autonomous-dev daemon smoke test.\n+Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "git add README.md && git commit -m 'docs: append reliability harness maintenance line to README.md ...'",
+      "exit_code": 0,
+      "output_tail": "[autonomous/REQ-000032 58e157c] docs: append reliability harness maintenance line to README.md\n 1 file changed, 1 insertion(+)"
+    },
+    {
+      "command": "git push -u origin autonomous/REQ-000032",
+      "exit_code": 0,
+      "output_tail": "To https://github.com/pwatsonr/smoke-hello.git\n * [new branch]      autonomous/REQ-000032 -> autonomous/REQ-000032\nbranch 'autonomous/REQ-000032' set up to track 'origin/autonomous/REQ-000032'."
+    },
+    {
+      "command": "gh pr create --base autonomous/REQ-000015 --head autonomous/REQ-000032 ...",
+      "exit_code": 0,
+      "output_tail": "https://github.com/pwatsonr/smoke-hello/pull/9"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/9",
+      "title": "docs: append reliability harness maintenance line to README.md"
+    }
+  ]
+}

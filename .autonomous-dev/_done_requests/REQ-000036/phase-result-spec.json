@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for trivial-docs append to README.md. Behavioral acceptance criteria anchored to literal target line and shell-verifiable checks (grep -cFx, awk last-non-empty, tail -c 1, git status --porcelain). No byte-count or length-delta assertions per proportional-rigor policy. Spec notes that README.md currently already ends with the target line, so the expected concrete outcome is a no-op (idempotent).",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000036-req-000036.md",
+      "title": "Spec: REQ-000036 — Append maintenance line to README.md"
+    }
+  ]
+}

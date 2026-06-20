@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for trivial-docs task: append 'Maintained by the autonomous-dev reliability harness.' as final line of README.md. Idempotent; current README already satisfies postcondition. Behavioral acceptance criteria anchored to literal content (grep/awk), no byte-count assertions. No API/data/error sections — N/A for prose change.",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000033-req-000033.md",
+      "title": "Spec: REQ-000033 — Append maintenance attribution line to README.md"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "status": "pass",
+  "phase": "code",
+  "feedback": "Appended canonical tagline to README.md as specified. All 10 acceptance criteria (AC-0 through AC-10 behavioral) passed. PR created at https://github.com/pwatsonr/smoke-hello/pull/6.",
+  "evidence": [
+    {
+      "command": "cat -v /Users/pwatson/codebase/smoke-hello/README.md && tail -c 1 README.md | xxd",
+      "exit_code": 0,
+      "output_tail": "# smoke-hello\n\nScratch repo for autonomous-dev daemon smoke test.\n\n> Tagline: a scratch repository used for autonomous-dev end-to-end smoke tests.\n00000000: 0a                                       ."
+    },
+    {
+      "command": "grep -cF '> Tagline: a scratch repository used for autonomous-dev end-to-end smoke tests.' README.md",
+      "exit_code": 0,
+      "output_tail": "1"
+    },
+    {
+      "command": "awk 'NF{last=$0} END{print last}' README.md",
+      "exit_code": 0,
+      "output_tail": "> Tagline: a scratch repository used for autonomous-dev end-to-end smoke tests."
+    },
+    {
+      "command": "tail -c 1 README.md | xxd && tail -c 2 README.md | xxd",
+      "exit_code": 0,
+      "output_tail": "00000000: 0a                                       .\n00000000: 2e0a                                     .."
+    },
+    {
+      "command": "head -n 3 README.md",
+      "exit_code": 0,
+      "output_tail": "# smoke-hello\n\nScratch repo for autonomous-dev daemon smoke test."
+    },
+    {
+      "command": "git status --porcelain",
+      "exit_code": 0,
+      "output_tail": " M README.md\n?? .autonomous-dev/\n?? docs/"
+    },
+    {
+      "command": "grep -q $'\\r' README.md; echo $? && LC_ALL=C grep -q '[^[:print:][:space:]]' README.md; echo $?",
+      "exit_code": 0,
+      "output_tail": "1\n1"
+    },
+    {
+      "command": "grep -ic 'autonomous-dev' README.md && grep -ic 'smoke test' README.md",
+      "exit_code": 0,
+      "output_tail": "2\n2"
+    },
+    {
+      "command": "git commit -m 'docs: append tagline to README.md (REQ-000023)'",
+      "exit_code": 0,
+      "output_tail": "[autonomous/REQ-000023 a65f15f] docs: append tagline to README.md (REQ-000023)\n 1 file changed, 2 insertions(+)"
+    },
+    {
+      "command": "gh pr create --base autonomous/REQ-000015 --head 'autonomous/REQ-000023' ...",
+      "exit_code": 0,
+      "output_tail": "https://github.com/pwatsonr/smoke-hello/pull/6"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/6",
+      "title": "docs: append tagline to README.md (REQ-000023)"
+    },
+    {
+      "kind": "file_edit",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "Appended canonical tagline blockquote to end of README.md"
+    }
+  ]
+}

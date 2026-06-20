@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "All acceptance criteria verified by running commands. AC-1: tagline appears exactly once. AC-2: tagline is last non-empty line. AC-3: file ends with single LF (0x0a), not double. AC-4: first 3 lines preserved. AC-7: no CR or non-ASCII bytes. AC-8: both required tokens present. Commit a65f15f on branch autonomous/REQ-000023 with +2 lines. PR #6 OPEN.",
+  "evidence": [
+    {
+      "command": "echo '=== INTEGRATION VERIFICATION RUN ===' && grep -cF '> Tagline: a scratch repository used for autonomous-dev end-to-end smoke tests.' README.md && awk 'NF{last=$0} END{print last}' README.md && tail -c 1 README.md | xxd && tail -c 2 README.md | xxd && head -n 3 README.md && grep -q $'\\r' README.md; echo \"CR_exit=$?\" && LC_ALL=C grep -q '[^[:print:][:space:]]' README.md; echo \"NONASCII_exit=$?\" && grep -ic 'autonomous-dev' README.md && grep -ic 'smoke test' README.md && git log --oneline -1 && gh pr view 6 --repo pwatsonr/smoke-hello --json number,title,state,url",
+      "exit_code": 0,
+      "output_tail": "1\n> Tagline: a scratch repository used for autonomous-dev end-to-end smoke tests.\n00000000: 0a                                       .\n00000000: 2e0a                                     ..\n# smoke-hello\n\nScratch repo for autonomous-dev daemon smoke test.\nCR_exit=1\nNONASCII_exit=1\n2\n2\na65f15f docs: append tagline to README.md (REQ-000023)\n{\"number\":6,\"state\":\"OPEN\",\"title\":\"docs: append tagline to README.md (REQ-000023)\",\"url\":\"https://github.com/pwatsonr/smoke-hello/pull/6\"}"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "file_edit",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "README.md with canonical tagline appended (committed as a65f15f)"
+    },
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/6",
+      "title": "docs: append tagline to README.md (REQ-000023) — PR #6 OPEN"
+    }
+  ]
+}

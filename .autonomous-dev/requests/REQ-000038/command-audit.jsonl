@@ -1,0 +1,3 @@
+{"ts":"2026-06-20T19:27:00.3NZ","phase":"integration","command":"cd /Users/pwatson/codebase/smoke-hello && python -m pytest test_hello.py -v 2>&1","argv":["cd"],"cwd":"/","exit_code":null,"duration_ms":null,"output_tail":null,"source":"sdk_hook"}
+{"ts":"2026-06-20T19:27:03.3NZ","phase":"integration","command":"cd /Users/pwatson/codebase/smoke-hello && python3 -m pytest test_hello.py -v 2>&1","argv":["cd"],"cwd":"/","exit_code":null,"duration_ms":null,"output_tail":null,"source":"sdk_hook"}
+{"ts":"2026-06-20T19:27:08.3NZ","phase":"integration","command":"python3 hello.py 2>&1","argv":["python3"],"cwd":"/Users/pwatson/codebase/smoke-hello","exit_code":null,"duration_ms":null,"output_tail":null,"source":"sdk_hook"}

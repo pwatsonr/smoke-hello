@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "Integration verified: README.md line 4 (last line) contains exactly 'Maintained by the autonomous-dev reliability harness.' Commit ad10cf6 changes only README.md (1 file, +1 line). Branch autonomous/REQ-000033 is up to date with remote. No regressions. PR #10 open at https://github.com/pwatsonr/smoke-hello/pull/10.",
+  "evidence": [
+    {
+      "command": "grep -F \"Maintained by the autonomous-dev reliability harness.\" README.md && echo \"LINE FOUND AT CORRECT POSITION\" && tail -1 README.md | grep -F \"Maintained by the autonomous-dev reliability harness.\" && echo \"LINE IS LAST LINE\"",
+      "exit_code": 0,
+      "output_tail": "Maintained by the autonomous-dev reliability harness.\nLINE FOUND AT CORRECT POSITION\nMaintained by the autonomous-dev reliability harness.\nLINE IS LAST LINE"
+    },
+    {
+      "command": "wc -l /Users/pwatson/codebase/smoke-hello/README.md && awk 'END{print \"Last line: \" NR \" -> \" $0}' /Users/pwatson/codebase/smoke-hello/README.md",
+      "exit_code": 0,
+      "output_tail": "       4 /Users/pwatson/codebase/smoke-hello/README.md\nLast line: 4 -> Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "git show HEAD --stat",
+      "exit_code": 0,
+      "output_tail": "commit ad10cf69eff4265ea23b32655376f604a998e7f6\nAuthor: pwatson <pwatsonr@gmail.com>\nDate:   Sat Jun 20 10:53:48 2026 -0500\n\n    docs: append reliability harness maintenance line to README.md\n\n README.md | 1 +\n 1 file changed, 1 insertion(+)"
+    },
+    {
+      "command": "git status && git log --oneline -5",
+      "exit_code": 0,
+      "output_tail": "On branch autonomous/REQ-000033\nYour branch is up to date with 'origin/autonomous/REQ-000033'.\n\nnothing added to commit but untracked files present\nad10cf6 docs: append reliability harness maintenance line to README.md\nd317e04 feat: add hello.py and test_hello.py for smoke test (REQ-000015)\n8e1b4d6 init smoke-hello scratch repo"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/README.md",
+      "title": "README.md with appended maintenance attribution line as final line"
+    }
+  ]
+}

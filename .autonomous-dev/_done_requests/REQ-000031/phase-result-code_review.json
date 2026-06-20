@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "phase": "code_review",
+  "feedback": "README.md ends with the exact required line 'Maintained by the autonomous-dev reliability harness.' Only README.md was modified. No blocking issues found.",
+  "findings": [],
+  "artifacts": [
+    { "kind": "review", "path": "README.md", "title": "README append review" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "tdd",
+  "feedback": "TDD authored for REQ-000037 (refactor hello.py to expose greet()). Document covers module structure, public API contract (greet(name='world') -> str), CLI __main__ guard, 4 ADRs resolving all PRD open questions, complete test plan (1 existing subprocess test preserved + 2 new unit tests), and a 4-task ordered implementation plan with full traceability to FR-1..FR-10 and NFR-1..NFR-6. Scale is proportional to the small design surface (single pure function, no new deps, no data model, no integrations).",
+  "artifacts": [
+    {
+      "kind": "tdd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/tdd/REQ-000037-req-000037.md",
+      "title": "TDD: Refactor hello.py to Expose greet() Function"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-20T14:59:54Z",
+  "request_id": "REQ-000031",
+  "from": "intake",
+  "to": "spec"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:03:15Z",
+  "request_id": "REQ-000031",
+  "from": "spec",
+  "to": "spec_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:06:29Z",
+  "request_id": "REQ-000031",
+  "from": "spec_review",
+  "to": "code"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:10:02Z",
+  "request_id": "REQ-000031",
+  "from": "code",
+  "to": "code_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:12:20Z",
+  "request_id": "REQ-000031",
+  "from": "code_review",
+  "to": "integration"
+}
+{
+  "event": "merge_decision",
+  "timestamp": "2026-06-20T15:15:15Z",
+  "request_id": "REQ-000031",
+  "decision": "skip_not_mergeable",
+  "reason": "mergeable=CONFLICTING mergeStateStatus=DIRTY (need MERGEABLE+CLEAN)",
+  "effective_trust": 3,
+  "merged": false,
+  "pr_url": "https://github.com/pwatsonr/smoke-hello/pull/8"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:15:15Z",
+  "request_id": "REQ-000031",
+  "from": "integration",
+  "to": "deploy"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T15:15:17Z",
+  "request_id": "REQ-000031",
+  "from": "deploy",
+  "to": "monitor"
+}
+{
+  "event": "completed",
+  "timestamp": "2026-06-20T15:18:03Z",
+  "request_id": "REQ-000031",
+  "phase": "monitor"
+}

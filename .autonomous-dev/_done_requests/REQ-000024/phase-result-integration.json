@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "All 3 tests pass (0 failures). Script output verified: `python3 hello.py` prints exactly 'hello world'. API contracts confirmed: greet()=='hello world', greet('ada')=='hello ada'. All acceptance criteria from the spec are satisfied end-to-end. No regressions.",
+  "evidence": [
+    {
+      "command": "python3 hello.py",
+      "exit_code": 0,
+      "output_tail": "hello world"
+    },
+    {
+      "command": "python3 -c \"from hello import greet; print(repr(greet())); print(repr(greet('ada'))); print(repr(greet('world')))\"",
+      "exit_code": 0,
+      "output_tail": "'hello world'\n'hello ada'\n'hello world'"
+    },
+    {
+      "command": "python3 -m pytest test_hello.py -v",
+      "exit_code": 0,
+      "output_tail": "test_hello.py::test_hello_prints_hello_world PASSED                      [ 33%]\ntest_hello.py::test_greet_default_returns_hello_world PASSED             [ 66%]\ntest_hello.py::test_greet_custom_name_returns_hello_ada PASSED           [100%]\n\n============================== 3 passed in 0.15s ==============================="
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "test-output",
+      "path": "/Users/pwatson/codebase/smoke-hello/test_hello.py",
+      "title": "Full pytest suite: 3 passed / 0 failed"
+    },
+    {
+      "kind": "source",
+      "path": "/Users/pwatson/codebase/smoke-hello/hello.py",
+      "title": "Refactored hello.py: greet(name='world') -> str with __main__ guard"
+    }
+  ]
+}

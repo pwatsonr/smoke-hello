@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "phase": "code_review",
+  "feedback": "APPROVE. hello.py defines greet(name='world') with correct type hints and f-string return; __main__ prints greet(). test_hello.py covers default, custom name, and existing script-output test. Spec requirements satisfied; no blocking findings.",
+  "findings": [],
+  "artifacts": [
+    {
+      "kind": "review",
+      "path": "/Users/pwatson/codebase/smoke-hello/.autonomous-dev/requests/REQ-000037/phase-result-code_review.json",
+      "title": "Code review verdict for REQ-000037"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "phase": "integration",
+  "feedback": "All 7 acceptance criteria verified on branch autonomous/REQ-000034. README.md contains the target line exactly once as its final non-empty line, file ends with newline, only README.md changed (+1/-0 diff). PR #11 open at https://github.com/pwatsonr/smoke-hello/pull/11.",
+  "evidence": [
+    {
+      "command": "cat README.md",
+      "exit_code": 0,
+      "output_tail": "# smoke-hello\n\nScratch repo for autonomous-dev daemon smoke test.\nMaintained by the autonomous-dev reliability harness.\n"
+    },
+    {
+      "command": "echo \"=== AC1: README.md exists ===\" && ls README.md && echo \"=== AC2: target line present ===\" && grep -cF 'Maintained by the autonomous-dev reliability harness.' README.md && echo \"=== AC3: line is exactly once (count==1) ===\" && [ \"$(grep -cF 'Maintained by the autonomous-dev reliability harness.' README.md)\" = \"1\" ] && echo \"PASS: exactly 1 occurrence\" && echo \"=== AC4: line is last non-empty line ===\" && [ \"$(awk 'NF{last=$0} END{print last}' README.md)\" = \"Maintained by the autonomous-dev reliability harness.\" ] && echo \"PASS: last non-empty line matches\" && echo \"=== AC5: file ends with newline ===\" && xxd README.md | tail -1 && echo \"=== AC6: no other files modified ===\" && git diff --name-only HEAD~1..HEAD && echo \"=== AC7: full file content ===\" && cat README.md",
+      "exit_code": 0,
+      "output_tail": "=== AC1: README.md exists ===\nREADME.md\n=== AC2: target line present ===\n1\n=== AC3: line is exactly once (count==1) ===\nPASS: exactly 1 occurrence\n=== AC4: line is last non-empty line ===\nPASS: last non-empty line matches\n=== AC5: file ends with newline ===\n00000070: 6172 6e65 7373 2e0a                      arness..\n=== AC6: no other files modified ===\nREADME.md\n=== AC7: full file content ===\n# smoke-hello\n\nScratch repo for autonomous-dev daemon smoke test.\nMaintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "git diff HEAD~1..HEAD --stat && git diff HEAD~1..HEAD",
+      "exit_code": 0,
+      "output_tail": "README.md | 1 +\n 1 file changed, 1 insertion(+)\ndiff --git a/README.md b/README.md\nindex 3b06434..afd9488 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,4 @@\n # smoke-hello\n \n Scratch repo for autonomous-dev daemon smoke test.\n+Maintained by the autonomous-dev reliability harness."
+    },
+    {
+      "command": "gh pr view 11 --repo pwatsonr/smoke-hello",
+      "exit_code": 0,
+      "output_tail": "title:\tdocs: append reliability harness maintenance line to README.md\nstate:\tOPEN\nauthor:\tpwatsonr\nnumber:\t11\nurl:\thttps://github.com/pwatsonr/smoke-hello/pull/11\nadditions:\t1\ndeletions:\t0\nauto-merge:\tdisabled"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "github_pr",
+      "path": "https://github.com/pwatsonr/smoke-hello/pull/11",
+      "title": "docs: append reliability harness maintenance line to README.md (+1/-0)"
+    }
+  ]
+}

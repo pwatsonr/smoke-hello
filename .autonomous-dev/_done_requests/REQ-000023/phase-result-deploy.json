@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "phase": "deploy",
+  "feedback": "No deploy target detected (no Dockerfile/compose/terraform/k8s/serverless/CI deploy config); deploy phase skipped.",
+  "artifacts": [],
+  "evidence": [],
+  "skipped": true
+}
