@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "prd",
+  "feedback": "PRD authored for REQ-000040: refactor hello.py to expose greet(name='world') and add unit tests in test_hello.py while preserving CLI behavior. Sections include problem statement, goals/non-goals, 4 user stories, 10 functional requirements, 7 NFRs, technical constraints, success metrics, risk assessment, open questions, and traceability matrix. Inspection notes that the target implementation is already present in the working tree; downstream phases will ratify against this contract.",
+  "artifacts": [
+    {
+      "kind": "prd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/prd/REQ-000040-req-000040.md",
+      "title": "PRD: Refactor hello.py to expose a greet() function (REQ-000040)"
+    }
+  ]
+}
