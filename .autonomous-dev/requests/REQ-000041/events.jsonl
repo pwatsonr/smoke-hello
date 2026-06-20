@@ -1,0 +1,63 @@
+{
+  "event": "intake_to_prd",
+  "timestamp": "2026-06-20T21:26:03Z",
+  "request_id": "REQ-000041",
+  "from": "intake",
+  "to": "prd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:30:04Z",
+  "request_id": "REQ-000041",
+  "from": "prd",
+  "to": "prd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:33:16Z",
+  "request_id": "REQ-000041",
+  "from": "prd_review",
+  "to": "tdd"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:37:54Z",
+  "request_id": "REQ-000041",
+  "from": "tdd",
+  "to": "tdd_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:41:07Z",
+  "request_id": "REQ-000041",
+  "from": "tdd_review",
+  "to": "plan"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:44:48Z",
+  "request_id": "REQ-000041",
+  "from": "plan",
+  "to": "plan_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:48:02Z",
+  "request_id": "REQ-000041",
+  "from": "plan_review",
+  "to": "spec"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:52:32Z",
+  "request_id": "REQ-000041",
+  "from": "spec",
+  "to": "spec_review"
+}
+{
+  "event": "phase_advance",
+  "timestamp": "2026-06-20T21:55:16Z",
+  "request_id": "REQ-000041",
+  "from": "spec_review",
+  "to": "code"
+}

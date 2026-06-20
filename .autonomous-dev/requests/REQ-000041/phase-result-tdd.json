@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "tdd",
+  "feedback": "TDD authored for REQ-000041. Scope-proportional design for a single-file refactor: documents the greet(name='world') -> str contract, the __main__ wiring, three pytest tests (default, custom name, subprocess CLI), four ADRs, and a full PRD→TDD→test traceability matrix. Data, Error Handling, and Security sections marked N/A (no new surface) per scale-rigor guidance. Confirmed existing hello.py and test_hello.py already match the target design; implementation reduces to verification.",
+  "artifacts": [
+    {
+      "kind": "tdd",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/tdd/REQ-000041-req-000041.md",
+      "title": "TDD: Refactor hello.py to expose greet() with pytest coverage"
+    }
+  ]
+}

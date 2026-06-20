@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "phase": "spec",
+  "feedback": "Spec authored for REQ-000041. Defines the exact greet() API contract (signature, postconditions, canonical f-string body per ADR-002), the exact __main__ entry point, the three required test cases (TC-1/TC-2/TC-3) with canonical bodies and constraints (sys.executable per ADR-003, timeout=5 per NFR-1), 14 observable acceptance criteria, and verification commands. Data Schemas and Error Handling explicitly marked N/A per Scale-Rigor (no new data structure / error path). No byte counts or fragile arithmetic. Cross-references Plan TASK-001, TDD §3/§7/ADRs, and PRD FR/NFR set. Working tree already matches; executor expected to verify with no edits required.",
+  "artifacts": [
+    {
+      "kind": "spec",
+      "path": "/Users/pwatson/codebase/smoke-hello/docs/specs/REQ-000041-req-000041.md",
+      "title": "Specification: Refactor hello.py to expose greet() with pytest coverage"
+    }
+  ]
+}
